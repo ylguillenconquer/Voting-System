@@ -101,18 +101,10 @@ contract Voting is Ownable {
        }
     }
 
-    function getWinnerNames() external view returns (string[] memory _winnernames) {
-        for (uint i = 0; i< winningProposal.length; i=i.add(1)) {
-            _winnernames[i] = bytes32ToString(proposals[winningProposal[i]].name);
-        }
-    }
 
     function getWinningProposals()  external view returns(uint256[] memory) {
         return winningProposal;
     }
-
-
-
 
 
     function stringToBytes32(string memory str) internal pure returns (bytes32) {
